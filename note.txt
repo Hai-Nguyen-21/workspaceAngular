@@ -1,0 +1,17 @@
+- Tạo 1 component mới 
+	"ng g c name-component"
+- Install bootstrap
+	"ng install bootstrap jquery --save"
+- Dùng two way binding cần import thêm ở trong file app.modules.ts
+	"import { FormsModule } from '@angular/forms';"
+  và thêm "FormsModule" vào phần imports bên dưới
+
+
+- controller là bộ điều khiển logic của ứng dụng và mỗi phần trong trang web sẽ cần những hàm khác
+		nhau đểu xử lý logic
+
+- scope là một từ khóa phiên dịch để controller có thể giao tiếp với html, Scope nhận vapf 2 thứ
+	+ 1 là giá trị
+	+ 2 là hành động ( thường là function)
+
+- ng-click chỉ sự kiện click chuột vào bất cứ đâu, thường sẽ gọi tới 1 hàm

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .luoi .mottin{
+            width: 31%;
+            margin-right: 2%;
+            float: left;
+            height: 600px;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+    
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Demo sử dụng angular cho hiệu ứng list view và grid view</h1>
+        <p class="lead">Ứng dụng của ng-model để làm hiệu ứng jquery</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="float-xs-right">
+                <select name="" id="" class="form-control" ng-model="display">
+                    <option value="cot">Hiển thị theo cột</option>
+                    <option value="luoi">Hiển thị theo lưới</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container {{display}}">
+        <div class="row">
+            <div class="mottin p-2 border-bottom">
+                <div class="vien">
+                    <img class="float-xs-left pr-2" src="https://source.unsplash.com/random/1"  style="width: 100px; height: 100px;" alt="">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia pariatur ullam distinctio deleniti, perferendis molestiae repellat quipusdam esse voluptate, provident cum sed opcaecati impedit depitis voluptatem. Veritatis enim doloripus tempore!
+                    Doloremque amet in voluptate sapiente fugiat asperiores eum laporiosam quae et ipsum nemo inventore magnam, reprehenderit ea ap vero. Dolores vel, officiis consectetur fuga reprehenderit vero nisi vitae dicta cupiditate.</p>
+                </div>
+            </div>
+            <div class="mottin p-2 border-bottom">
+                <div class="vien">
+                    <img class="float-xs-left pr-2" src="https://source.unsplash.com/random/2"  style="width: 100px; height: 100px;" alt="">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia pariatur ullam distinctio deleniti, perferendis molestiae repellat quipusdam esse voluptate, provident cum sed opcaecati impedit depitis voluptatem. Veritatis enim doloripus tempore!
+                    Doloremque amet in voluptate sapiente fugiat asperiores eum laporiosam quae et ipsum nemo inventore magnam, reprehenderit ea ap vero. Dolores vel, officiis consectetur fuga reprehenderit vero nisi vitae dicta cupiditate.</p>
+                </div>
+            </div>
+            <div class="mottin p-2 border-bottom">
+                <div class="vien">
+                    <img class="float-xs-left pr-2" src="https://source.unsplash.com/random/3"  style="width: 100px; height: 100px;" alt="">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia pariatur ullam distinctio deleniti, perferendis molestiae repellat quipusdam esse voluptate, provident cum sed opcaecati impedit depitis voluptatem. Veritatis enim doloripus tempore!
+                    Doloremque amet in voluptate sapiente fugiat asperiores eum laporiosam quae et ipsum nemo inventore magnam, reprehenderit ea ap vero. Dolores vel, officiis consectetur fuga reprehenderit vero nisi vitae dicta cupiditate.</p>
+                </div>
+            </div>
+            <div class="mottin p-2 border-bottom">
+                <div class="vien">
+                    <img class="float-xs-left pr-2" src="https://source.unsplash.com/random/4"  style="width: 100px; height: 100px;" alt="">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia pariatur ullam distinctio deleniti, perferendis molestiae repellat quipusdam esse voluptate, provident cum sed opcaecati impedit depitis voluptatem. Veritatis enim doloripus tempore!
+                    Doloremque amet in voluptate sapiente fugiat asperiores eum laporiosam quae et ipsum nemo inventore magnam, reprehenderit ea ap vero. Dolores vel, officiis consectetur fuga reprehenderit vero nisi vitae dicta cupiditate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- angular js -->
+    <script src="./js/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js" integrity="sha512-jZoujmRqSbKvkVDG+hf84/X11/j5TVxwBrcQSKp1W+A/fMxmYzOAVw+YaOf3tWzG/SjEAbam7KqHMORlsdF/eA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-aria/1.8.2/angular-aria.min.js" integrity="sha512-IP/3KOfYYFXQTJVQkBfavKkpvK8u+JD5r2C5vO3Dj3ufl7Xk0SoI0Oh2MXMFcGSAOxK6oZhWbZVWglgvZwAU+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.2/angular-messages.min.js" integrity="sha512-X3xzYri4sQgIJ9lQOEJesZcYYJsdDBekZU9AuEsSXwCHJTOkcEn4Chh9kUlTzTgYKWnQNxT3H96X5boZMuco+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.4/angular-material.min.js" integrity="sha512-NEBX4qF6BvYQvBDH6DQP+pSKr/H7UBJNB36DNHpeMlafU3Y/ybvUTsJZkCgF+lz3leh9+aYCrbqfO4SSiHfSww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var app = angular.module('myApp', []);
+        function myFunc($scope){
+
+        }
+        app.controller('MyController', myFunc);
+    </script>
+</body>
+</html>

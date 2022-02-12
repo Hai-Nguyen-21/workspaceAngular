@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body ng-app="myApp" ng-controller="MyController">
+    
+    <div class="container">
+        <div ng-repeat="person in people">
+            <div class="card mb-2" ng-init="person.show=false" ng-show="person.show">
+                <div class="card-header">
+                    Thông tin về <input type="text" class="form-control" ng-model="person.name">
+                </div>
+                <div class="card-block p-2">
+                    <b>Năm sinh: <input type="text" class="form-control" ng-model="person.born"></b> <br>
+                    <b>Facebook: <input type="text" class="form-control" ng-model="person.face"></b> <br>
+                    <b>Điện thoại: <input type="text" class="form-control" ng-model="person.phone"></b> <br>
+                </div>
+                <br>
+                <button class="btn btn-outline-danger" ng-click="!edit(person)">Save</button>
+            </div>
+        </div>
+        <div ng-repeat="person in people">
+            <div class="card mb-2" ng-init="!person.show=true" ng-show="!person.show">
+                <div class="card-header">
+                    <button class="float-end btn btn-info"
+                        ng-click="edit(person)">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <br>
+                    Thông tin về {{person.name}}
+                </div>
+                <div class="card-block p-2">
+                    <p>Năm sinh: {{person.born}} </p><br>
+                    <p>Facebook: {{person.face}} </p><br>
+                    <p>Điện thoại: {{person.phone}} </p><br>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- angular js -->
+    <script src="./js/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-animate/1.8.2/angular-animate.min.js" integrity="sha512-jZoujmRqSbKvkVDG+hf84/X11/j5TVxwBrcQSKp1W+A/fMxmYzOAVw+YaOf3tWzG/SjEAbam7KqHMORlsdF/eA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-aria/1.8.2/angular-aria.min.js" integrity="sha512-IP/3KOfYYFXQTJVQkBfavKkpvK8u+JD5r2C5vO3Dj3ufl7Xk0SoI0Oh2MXMFcGSAOxK6oZhWbZVWglgvZwAU+w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.8.2/angular-messages.min.js" integrity="sha512-X3xzYri4sQgIJ9lQOEJesZcYYJsdDBekZU9AuEsSXwCHJTOkcEn4Chh9kUlTzTgYKWnQNxT3H96X5boZMuco+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.4/angular-material.min.js" integrity="sha512-NEBX4qF6BvYQvBDH6DQP+pSKr/H7UBJNB36DNHpeMlafU3Y/ybvUTsJZkCgF+lz3leh9+aYCrbqfO4SSiHfSww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('MyController', function($scope){
+
+            $scope.display = false;
+
+            $scope.people = [
+                {
+                    name: "Nguyễn Lê Hải",
+                    born: 2002,
+                    face: "fb.com/nlhai",
+                    phone: "0977256375"
+                },
+                {
+                    name: "Phạm Minh Tú",
+                    born: 2002,
+                    face: "fb.com/pmtu",
+                    phone: "0977255555"
+                },
+                {
+                    name: "Lê Thành Đạt",
+                    born: 2001,
+                    face: "fb.com/ltdat",
+                    phone: "0988856375"
+                },
+                {
+                    name: "Trần Đức Quang",
+                    born: 2000,
+                    face: "fb.com/tdquang",
+                    phone: "0977567845"
+                },
+            ];
+
+            $scope.edit = function(item){
+                item.show = !item.show 
+            }
+        })
+    </script>
+</body>
+</html>
